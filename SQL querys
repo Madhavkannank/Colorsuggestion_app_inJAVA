@@ -1,0 +1,84 @@
+-- Create themes table
+CREATE TABLE themes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    theme_name VARCHAR(100),
+    description VARCHAR(255)
+);
+
+-- Create colors table
+CREATE TABLE colors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    theme_id INT,
+    color_name VARCHAR(100),
+    color_hex VARCHAR(7),
+    FOREIGN KEY (theme_id) REFERENCES themes(id)
+);
+
+-- Insert 30 themes
+INSERT INTO themes (theme_name, description) VALUES
+('Calm', 'Soft and soothing colors'),
+('Energetic', 'Bright and vibrant colors'),
+('Minimal', 'Clean and simple tones'),
+('Luxury', 'Rich and elegant shades'),
+('Nature', 'Earthy and green tones'),
+('Pastel', 'Light and gentle pastels'),
+('Dark Mode', 'Dark background with contrast'),
+('Retro', 'Vintage and funky combinations'),
+('Professional', 'Formal and balanced colors'),
+('Neon', 'Bright neon shades for modern look'),
+('Sunset Glow', 'Warm hues of sunset: orange, pink, gold'),
+('Cyberpunk', 'Neon and electric futuristic colors'),
+('Ocean Breeze', 'Cool blues and sea greens for marine calmness'),
+('Autumn Leaves', 'Earthy reds, oranges, and browns'),
+('Monochrome', 'Various shades of a single color'),
+('Gradient Shift', 'Smooth transitions between color hues'),
+('Berry Bliss', 'Reds, pinks, purples inspired by berries'),
+('Coffee Tones', 'Browns and creams like coffee shades'),
+('Frozen Winter', 'Icy blues, whites, and silvers'),
+('Tropical Fiesta', 'Bright fruit-inspired and floral tones'),
+('Desert Sands', 'Tans, beiges, and golden browns'),
+('Vintage Film', 'Sepia, dusty tones for a retro feel'),
+('Galaxy Glow', 'Blacks, purples, and starry tones'),
+('Mint Fresh', 'Pastel greens and whites'),
+('Peachy Keen', 'Corals, peaches, and pastel oranges'),
+('Elegant Emerald', 'Jewel tones with emerald greens'),
+('Rose Gold', 'Rose, blush pink, and metallic golds'),
+('Sky Pastels', 'Soft sky blue, lilac, and lemon pastels'),
+('Midnight Mode', 'Deep blues, dark purples, and charcoal'),
+('Festival Lights', 'Colorful combinations with high saturation');
+
+-- Insert 3 colors per theme (id 1 to 30)
+-- Sample for first 5, rest are similar
+INSERT INTO colors (theme_id, color_name, color_hex) VALUES
+(1, 'Sky Blue', '#87CEEB'), (1, 'Mint Green', '#98FF98'), (1, 'Lavender', '#E6E6FA'),
+(2, 'Bright Red', '#FF2400'), (2, 'Lemon Yellow', '#FFF700'), (2, 'Vivid Orange', '#FF9900'),
+(3, 'Soft White', '#F8F8F8'), (3, 'Charcoal', '#333333'), (3, 'Slate Gray', '#708090'),
+(4, 'Royal Gold', '#FFD700'), (4, 'Emerald', '#50C878'), (4, 'Wine Red', '#722F37'),
+(5, 'Forest Green', '#228B22'), (5, 'Earth Brown', '#8B4513'), (5, 'Sky Blue', '#87CEEB'),
+(6, 'Baby Pink', '#FFB6C1'), (6, 'Peach', '#FFDAB9'), (6, 'Light Lavender', '#E6E6FA'),
+(7, 'Jet Black', '#000000'), (7, 'Ash Gray', '#B2BEB5'), (7, 'Cool Blue', '#3B3B98'),
+(8, 'Olive', '#808000'), (8, 'Mustard', '#FFDB58'), (8, 'Rust Red', '#B7410E'),
+(9, 'Steel Blue', '#4682B4'), (9, 'Pewter', '#96A8A1'), (9, 'Slate', '#708090'),
+(10, 'Electric Pink', '#FF1493'), (10, 'Lime Green', '#32CD32'), (10, 'Cyan', '#00FFFF'),
+(11, 'Sunset Orange', '#FF7E5F'), (11, 'Peach', '#FEB47B'), (11, 'Burnt Coral', '#FF6F61'),
+(12, 'Hot Pink', '#FF0080'), (12, 'Neon Blue', '#00FFFF'), (12, 'Electric Purple', '#8800FF'),
+(13, 'Aqua', '#00B4DB'), (13, 'Teal', '#0083B0'), (13, 'Wave Blue', '#66D3FA'),
+(14, 'Maple', '#D2691E'), (14, 'Pumpkin', '#FF7F50'), (14, 'Chestnut', '#A0522D'),
+(15, 'Black', '#000000'), (15, 'Gray', '#808080'), (15, 'Silver', '#C0C0C0'),
+(16, 'Pink Fade', '#FF9A9E'), (16, 'Soft Peach', '#FAD0C4'), (16, 'Blush', '#FFD1FF'),
+(17, 'Berry Red', '#8E4585'), (17, 'Magenta', '#C71585'), (17, 'Plum', '#DA70D6'),
+(18, 'Espresso', '#4B2E2E'), (18, 'Mocha', '#8B5A2B'), (18, 'Latte', '#D2B48C'),
+(19, 'Ice Blue', '#E0FFFF'), (19, 'Powder Blue', '#B0E0E6'), (19, 'Frost', '#AFEEEE'),
+(20, 'Papaya', '#FF6347'), (20, 'Sunshine', '#FFD700'), (20, 'Lime', '#ADFF2F'),
+(21, 'Sand', '#EDC9AF'), (21, 'Beige', '#C2B280'), (21, 'Tan', '#DEB887'),
+(22, 'Sepia', '#A67B5B'), (22, 'Dusty Rose', '#C9A97D'), (22, 'Walnut', '#8B7355'),
+(23, 'Indigo', '#4B0082'), (23, 'Dark Purple', '#8A2BE2'), (23, 'Black Hole', '#1E1E3F'),
+(24, 'Mint', '#AAF0D1'), (24, 'Pastel Green', '#98FB98'), (24, 'Cream', '#E0FFF0'),
+(25, 'Peach', '#FFDAB9'), (25, 'Apricot', '#FFE5B4'), (25, 'Soft Orange', '#FFB07C'),
+(26, 'Emerald', '#50C878'), (26, 'Sea Green', '#2E8B57'), (26, 'Dark Green', '#006400'),
+(27, 'Rose', '#B76E79'), (27, 'Blush Pink', '#F6C1C1'), (27, 'Rose Gold', '#FFDAB9'),
+(28, 'Sky Blue', '#ADD8E6'), (28, 'Lavender', '#E6E6FA'), (28, 'Pale Yellow', '#FFFACD'),
+(29, 'Midnight Blue', '#191970'), (29, 'Charcoal', '#2F4F4F'), (29, 'Indigo', '#4B0082'),
+(30, 'Hot Pink', '#FF1493'), (30, 'Aqua Blue', '#00CED1'), (30, 'Gold', '#FFD700');
+
+
